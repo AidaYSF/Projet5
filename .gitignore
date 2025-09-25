@@ -1,12 +1,7 @@
 # Data
 *.csv
-API/model_SVC_USE/
 tfhub_cache/
 mlruns/
-
-mlruns/
-tfhub_cache/
-*.pkl
 *.data-00000-of-00001
 
 
