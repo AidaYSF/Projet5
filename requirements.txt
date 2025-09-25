@@ -7,7 +7,6 @@ nltk
 tensorflow
 scikit-learn==1.7.1
 tensorflow_hub
-gensim==4.3.2
 mlflow
 scipy
 transformers
