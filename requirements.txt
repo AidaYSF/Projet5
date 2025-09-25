@@ -4,8 +4,8 @@ pandas
 matplotlib
 seaborn
 nltk
-scikit-learns
 tensorflow
+scikit-learn==1.7.1
 tensorflow_hub
 gensim
 mlflow

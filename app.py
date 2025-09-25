@@ -3,6 +3,7 @@ from pydantic import BaseModel
 import pickle
 import numpy as np
 import tensorflow_hub as hub
+import tensorflow as tf  
 import os
 
 os.environ["TFHUB_CACHE_DIR"] = "./tfhub_cache"
@@ -23,9 +24,8 @@ class TextRequest(BaseModel):
 
 @app.post("/predict")
 def predict_tags(req: TextRequest):
-    embedding = use_model([req.text]).numpy()
-    y_pred = svc_model.predict(embedding)
-    print("y_pred:", y_pred)  # Pour voir la sortie
+    texts = [req.text]
+    embeddings = use_model(tf.constant(texts)).numpy() # type: ignore
+    y_pred = svc_model.predict(embeddings)
     tags = mlb.inverse_transform(y_pred)[0]
-    print("tags:", tags)      # Pour voir les tags
     return {"tags": tags}
