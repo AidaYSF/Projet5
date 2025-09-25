@@ -1,0 +1,16 @@
+# Import des librairies
+numpy
+pandas
+matplotlib
+seaborn
+nltk
+scikit-learns
+tensorflow
+tensorflow_hub
+gensim
+mlflow
+scipy==1.10.1
+transformers
+torch
+fastapi
+pydantic
