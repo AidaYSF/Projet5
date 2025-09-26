@@ -1,15 +1,10 @@
 # Import des librairies
 numpy
 pandas
-matplotlib
-seaborn
 nltk
-tensorflow
+tensorflow-cpu
 scikit-learn==1.7.1
 tensorflow_hub
-mlflow
 scipy
-transformers
-torch
 fastapi
 pydantic

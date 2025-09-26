@@ -8,7 +8,7 @@ from unittest.mock import patch, MagicMock
 
 client = TestClient(app)
 
-# ✅ Test 1 : Texte valide => tags attendus
+# Test 1 : Texte valide => tags attendus
 @patch("app.use_model")
 @patch("app.svc_model")
 @patch("app.mlb")
@@ -26,7 +26,7 @@ def test_predict_tags(mock_mlb, mock_svc_model, mock_use_model):
     assert "tags" in response.json()
     assert response.json()["tags"] == ["python", "pandas"]
 
-# ❌ Test 2 : Texte vide => devrait retourner quand même une réponse (selon ton choix)
+# Test 2 : Texte vide => devrait retourner quand même une réponse (selon ton choix)
 @patch("app.use_model")
 @patch("app.svc_model")
 @patch("app.mlb")
@@ -44,12 +44,12 @@ def test_empty_text(mock_mlb, mock_svc_model, mock_use_model):
     assert "tags" in response.json()
     assert response.json()["tags"] == []
 
-# ❌ Test 3 : Pas de champ "text" dans le JSON => erreur 422 (Unprocessable Entity)
+# Test 3 : Pas de champ "text" dans le JSON => erreur 422 (Unprocessable Entity)
 def test_missing_text_field():
     response = client.post("/predict", json={"wrong_field": "test"})
     assert response.status_code == 422
 
-# ✅ Test 4 : Autre texte valide => autres tags
+# Test 4 : Autre texte valide => autres tags
 @patch("app.use_model")
 @patch("app.svc_model")
 @patch("app.mlb")
@@ -67,7 +67,7 @@ def test_another_text(mock_mlb, mock_svc_model, mock_use_model):
     assert "tags" in response.json()
     assert response.json()["tags"] == ["machine-learning", "tensorflow"]
 
-# ❌ Test 5 : Mauvais format JSON (ex. : string au lieu d’objet)
+# Test 5 : Mauvais format JSON (ex. : string au lieu d’objet)
 def test_invalid_json():
     response = client.post(
         "/predict",
