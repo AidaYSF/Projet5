@@ -3,7 +3,6 @@ from pydantic import BaseModel
 import pickle
 import numpy as np
 import tensorflow_hub as hub
-import tensorflow as tf  
 import os
 
 os.environ["TFHUB_CACHE_DIR"] = "./tfhub_cache"
