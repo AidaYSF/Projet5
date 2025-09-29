@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
+import tensorflow as tf
 import pickle
 import numpy as np
 import tensorflow_hub as hub
