@@ -1,10 +1,17 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
+
+# Masquer les logs TensorFlow
+os.environ["TF_CPP_MIN_LOG_LEVEL"] = "3"
 import tensorflow as tf
+
+
 import pickle
 import numpy as np
 import tensorflow_hub as hub
 import os
+
+
 
 os.environ["TFHUB_CACHE_DIR"] = "./tfhub_cache"
 
