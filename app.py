@@ -6,6 +6,11 @@ import tensorflow_hub as hub
 import os
 
 
+# Masquer les logs TensorFlow
+os.environ["TF_CPP_MIN_LOG_LEVEL"] = "3"
+import tensorflow as tf
+
+
 os.environ["TFHUB_CACHE_DIR"] = "./tfhub_cache"
 
 app = FastAPI()
