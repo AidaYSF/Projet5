@@ -5,6 +5,7 @@ import numpy as np
 import tensorflow_hub as hub
 import os
 
+
 os.environ["TFHUB_CACHE_DIR"] = "./tfhub_cache"
 
 app = FastAPI()
