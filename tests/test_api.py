@@ -67,7 +67,7 @@ def test_another_text(mock_mlb, mock_svc_model, mock_use_model):
     assert "tags" in response.json()
     assert response.json()["tags"] == ["machine-learning", "tensorflow"]
 
-# Test 5 : Mauvais format JSON (ex. : string au lieu d’objet)
+# Test 5 : Mauvais format JSON 
 def test_invalid_json():
     response = client.post(
         "/predict",
