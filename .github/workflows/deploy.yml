@@ -31,7 +31,7 @@ jobs:
     - name: 🚀 Deploy to AWS EC2
       uses: appleboy/ssh-action@v1.1.0
       with:
-        host: ec2-98-84-169-253.compute-1.amazonaws.com   # ✅ ton EC2 public DNS
+        host: ec2-54-89-172-154.compute-1.amazonaws.com  # ✅ ton EC2 public DNS
         username: ubuntu                                 # ✅ ton utilisateur EC2
         key: ${{ secrets.EC2_SSH_KEY }}                # ✅ clé SSH privée (.pem)
         script: |
